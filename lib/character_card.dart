@@ -8,7 +8,7 @@ class CharacterCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final photo = Container(
-        margin: EdgeInsets.only(top: 20.0, left: 20.0),
+        margin: EdgeInsets.only(top: 10.0, left: 20.0, bottom: 10.0),
         width: 80.0,
         height: 80.0,
         decoration: BoxDecoration(
@@ -24,10 +24,18 @@ class CharacterCard extends StatelessWidget {
             textAlign: TextAlign.left, style: TextStyle(fontSize: 15.0)));
     final characterDetail = Container(
       child: Column(children: <Widget>[nameField, speciesField]),
-      margin: EdgeInsets.only(top: 20.0, left: 10.0),
+      margin: EdgeInsets.only(top: 10.0, left: 10.0),
     );
-    return Row(
-      children: <Widget>[photo, characterDetail],
-    );
+    return Container(
+      width: 20.0,
+        child: Card(
+          elevation: 3,
+          margin: EdgeInsets.only(top: 10, bottom: 10, left: 20, right: 20),
+          color: Colors.white,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0)),
+            child: Row(
+              children: <Widget>[photo, characterDetail],
+            )));
   }
 }
